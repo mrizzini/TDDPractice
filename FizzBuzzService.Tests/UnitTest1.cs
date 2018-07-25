@@ -9,34 +9,22 @@ namespace Tests
         public class FizzBuzzerTests
         {
             [Test]
-            public void Buzzer_When1_Returns1()
+            public void Buzzer_WhenDefault_ReturnsInput([Values(1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19)] int input)
             {
                 // Arrange
-                int input = 1;
+                // int input = 1;
 
                 // Act
                 string output = FizzBuzzer.GetValue(input); 
 
                 // Assert
-                Assert.AreEqual("1", output);
+                Assert.AreEqual(input.ToString(), output);
             }
 
             [Test]
-            public void Buzzer_When2_Returns2()
+            public void Buzzer_WhenDiv3_ReturnsFizz([Values(3, 6, 9, 12, 18)] int input)
             {
-                int input = 2;
-
-                //Act
-                string output = FizzBuzzer.GetValue(input);
-
-                // Assert
-                Assert.AreEqual("2", output);
-            }
-
-            [Test]
-            public void Buzzer_WhenDiv3_ReturnsFizz()
-            {
-                int input = 3;
+                // int input = 3;
 
                 //Act
                 string output = FizzBuzzer.GetValue(input);
@@ -46,9 +34,9 @@ namespace Tests
             }
 
             [Test]
-            public void Buzzer_WhenDiv5_ReturnsBuzz()
+            public void Buzzer_WhenDiv5_ReturnsBuzz([Values(5, 10, 20)] int input)
             {
-                int input = 5;
+                // int input = 5;
 
                 //Act
                 string output = FizzBuzzer.GetValue(input);
@@ -58,9 +46,9 @@ namespace Tests
             }
 
             [Test]
-            public void Buzzer_WhenDiv3And5_ReturnsFizzBuzz()
+            public void Buzzer_WhenDiv3And5_ReturnsFizzBuzz([Values(15)] int input)
             {
-                int input = 15;
+                // int input = 15;
 
                 //Act
                 string output = FizzBuzzer.GetValue(input);

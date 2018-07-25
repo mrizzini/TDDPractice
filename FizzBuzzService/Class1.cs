@@ -6,16 +6,21 @@ namespace FizzBuzz.Service
     {
         public static string GetValue(int input)
         {
-            string result = input.ToString();
+            string result = string.Empty;
 
-            if (input % 3 == 0 && input % 5 == 0)
-                result = "FizzBuzz";
+            // if (input % 3 == 0 && input % 5 == 0)
+            //     result += "FizzBuzz";
 
-            else if (input % 3 == 0)
-                result = "Fizz";
+            if (input % 3 == 0)
+                result += "Fizz";
             
-            else if (input % 5 == 0)
-                result = "Buzz";
+            if (input % 5 == 0)
+                result += "Buzz";
+            
+            if (string.IsNullOrEmpty(result))
+            {
+                result = input.ToString();
+            }
 
             return result;
             
